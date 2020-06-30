@@ -1,0 +1,94 @@
+body {
+  background:#223c61 url(https://s3.amazonaws.com/tboe-static/snowflake2015/snowflake_share_bg.jpg);
+}
+.snowflake {
+  display: block;
+  margin: 0px;
+  width: 450px;
+  padding: 100px;
+  margin: 0 auto;
+
+  #snowflake_maker {
+    position: relative;
+    left: 40px;
+    margin: 0 auto;
+    width: 450px;
+    height: 450px;
+  }
+
+  #snowflake_holder {
+      width:450px;
+      height:512px;
+
+      font-family:cursive;
+      margin: 0 auto;
+      position: relative;
+
+      font-family: 'Tangerine', cursive;
+      font-weight:700;
+      user-select: none;
+
+      -ms-transform-origin: 50% 50%;
+      -webkit-transform-origin: 50% 50%;
+      transform-origin: 50% 50%;
+
+      color:#fff !important;
+      opacity:1;
+      z-index:1;
+  }
+
+  .arm {
+      height:80px;
+      width:256px;
+      position:absolute;
+      right:256px; /* half main width */
+      top:216px; /* half main width - half arm height */
+      vertical-align: middle;
+  }
+
+  .text_holder {
+      width:100%;
+      height:40px;
+      line-height: 40px;
+      font-size:40px;
+      font-weight: 100;
+      position:absolute;
+      left:0px;
+      top:0px;
+  }
+
+  .text_holder.bottom {
+      transform: scaleY(-1);
+      filter: FlipV;
+      -ms-filter: "FlipV";
+      top:40px;
+  }
+  .char {
+      float:left;
+  }
+  .rotate_pin {
+      transform-origin: 100% 50%;
+  }
+
+}
+
+.name {
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  width: 450px;
+  padding: 100px;
+  font-family: 'Open Sans';
+  font-weight: 300;
+  text-transform: lowercase;
+  line-height: 48px;
+  font-size: 40px;
+  color: #fff !important;
+}
+
+.form {
+  form {
+    margin: 0 auto;
+    width: 450px;
+  }
+}
