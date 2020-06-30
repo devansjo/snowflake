@@ -102,6 +102,9 @@ body {
     zoom: 60%;
     margin: 100px auto 10px auto;
   }
+  @media (max-width: 380px){
+    zoom: 50%;
+  }
 
   #snowflake_maker {
     position: relative;
