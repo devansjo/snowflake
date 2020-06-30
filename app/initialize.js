@@ -4,7 +4,6 @@ import queryString from 'query-string';
 require('buffer').Buffer;
 
 document.addEventListener('DOMContentLoaded', () => {
-  // do your setup here
   const query = queryString.parse(window.location.search);
   const params = query.name ? {name: query.name} : {};
   buildSnowflake($('#snowflake_holder'), params);

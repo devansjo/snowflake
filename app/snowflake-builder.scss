@@ -1,6 +1,9 @@
 html {
     font-size: 16px;
-    height: 100%;
+    background: #223c61 url(https://s3.amazonaws.com/tboe-static/snowflake2015/snowflake_share_bg.jpg);
+}
+body {
+  margin: 0;
 }
 
 /* montserrat-800 - latin */
@@ -48,12 +51,8 @@ html {
 }
 
 
-body {
-  background:#223c61 url(https://s3.amazonaws.com/tboe-static/snowflake2015/snowflake_share_bg.jpg);
-  margin: 0;
-}
 
-.main-header {
+.header {
     background: #fffdf0;
     box-shadow: 0 1px 5px rgba(0,0,0,.05);
     position: fixed;
@@ -92,12 +91,17 @@ body {
   }
 }
 
+
 .snowflake {
   display: block;
-  margin: 0px;
   width: 450px;
   padding: 100px;
   margin: 0 auto;
+
+  @media (max-width: 480px){
+    zoom: 60%;
+    margin: 100px auto 10px auto;
+  }
 
   #snowflake_maker {
     position: relative;
@@ -160,26 +164,40 @@ body {
   .rotate_pin {
       transform-origin: 100% 50%;
   }
-
 }
 
 .name {
   margin: 0 auto;
   display: block;
   text-align: center;
-  width: 450px;
+  max-width: 550px;
   padding: 100px;
   font-family: 'Open Sans';
   font-weight: 300;
   text-transform: lowercase;
-  line-height: 48px;
-  font-size: 40px;
+  line-height: 2.5rem;
+  font-size: 2.5rem;
   color: #fff !important;
+  @media (max-width: 480px){
+    line-height: 1.5rem;
+    font-size: 1.5rem;
+    padding: 50px;
+  }
 }
 
 .form {
-  form {
+  .container {
     margin: 0 auto;
-    width: 450px;
+    text-align: center;
+    input {
+      background: #fff;
+      border-color: #000;
+      font-size: 2rem;
+      padding: 0.8rem;
+      @media (max-width: 480px){
+        font-size: 1.2rem;
+        padding: 0.5rem;
+      }
+    }
   }
 }

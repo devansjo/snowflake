@@ -1,6 +1,10 @@
 html {
   font-size: 16px;
-  height: 100%;
+  background: #223c61 url(https://s3.amazonaws.com/tboe-static/snowflake2015/snowflake_share_bg.jpg);
+}
+
+body {
+  margin: 0;
 }
 
 /* montserrat-800 - latin */
@@ -39,12 +43,7 @@ html {
   src: local("Open Sans Bold"), local("OpenSans-Bold"), url("/fonts/open-sans-v16-latin-700.woff2") format("woff2"), url("/fonts/open-sans-v16-latin-700.woff") format("woff");
   /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
-body {
-  background: #223c61 url(https://s3.amazonaws.com/tboe-static/snowflake2015/snowflake_share_bg.jpg);
-  margin: 0;
-}
-
-.main-header {
+.header {
   background: #fffdf0;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
   position: fixed;
@@ -52,7 +51,7 @@ body {
   width: 100%;
   z-index: 10;
 }
-.main-header .container {
+.header .container {
   -ms-flex-align: center;
   -ms-flex-direction: row;
   -webkit-align-items: center;
@@ -71,7 +70,7 @@ body {
   padding: 0 10px;
   width: 100%;
 }
-.main-header .container .tboe-logo {
+.header .container .tboe-logo {
   font-family: Montserrat, sans-serif;
   font-size: 1.2rem;
   font-weight: 800;
@@ -79,16 +78,21 @@ body {
   text-decoration: none;
   padding: 15px 0;
 }
-.main-header .container .tboe-logo:active, .main-header .container .tboe-logo:link, .main-header .container .tboe-logo:visited {
+.header .container .tboe-logo:active, .header .container .tboe-logo:link, .header .container .tboe-logo:visited {
   color: #000;
 }
 
 .snowflake {
   display: block;
-  margin: 0px;
   width: 450px;
   padding: 100px;
   margin: 0 auto;
+}
+@media (max-width: 480px) {
+  .snowflake {
+    zoom: 60%;
+    margin: 100px auto 10px auto;
+  }
 }
 .snowflake #snowflake_maker {
   position: relative;
@@ -150,26 +154,38 @@ body {
   margin: 0 auto;
   display: block;
   text-align: center;
-  width: 450px;
+  max-width: 550px;
   padding: 100px;
   font-family: "Open Sans";
   font-weight: 300;
   text-transform: lowercase;
-  line-height: 48px;
-  font-size: 40px;
+  line-height: 2.5rem;
+  font-size: 2.5rem;
   color: #fff !important;
 }
-
-.form form {
-  margin: 0 auto;
-  width: 450px;
+@media (max-width: 480px) {
+  .name {
+    line-height: 1.5rem;
+    font-size: 1.5rem;
+    padding: 50px;
+  }
 }
 
-.brunch {
-  font-family: -apple-system, Sans-Serif;
+.form .container {
+  margin: 0 auto;
   text-align: center;
-  font-size: 24pt;
-  color: #3f894a;
+}
+.form .container input {
+  background: #fff;
+  border-color: #000;
+  font-size: 2rem;
+  padding: 0.8rem;
+}
+@media (max-width: 480px) {
+  .form .container input {
+    font-size: 1.2rem;
+    padding: 0.5rem;
+  }
 }
 
 

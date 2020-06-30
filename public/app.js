@@ -169,7 +169,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 require('buffer').Buffer;
 
 document.addEventListener('DOMContentLoaded', function () {
-  // do your setup here
   var query = _queryString2.default.parse(window.location.search);
   var params = query.name ? { name: query.name } : {};
   (0, _snowflakeRenderer2.default)((0, _jquery2.default)('#snowflake_holder'), params);
@@ -264,8 +263,7 @@ function buildSnowflake($target, options) {
     (0, _jquery2.default)('.poster_framed_1_text').css({ 'color': '#' + options.text_colour });
 
     // Copy styles and content into the static snowflake builder page
-    (0, _jquery2.default)('#snowflake_background').css({ 'background-color': '#' + options.background_colour });
-    (0, _jquery2.default)('#snowflake_background #snowflake_maker #snowflake_holder div').css({ 'color': '#' + options.text_colour });
+    (0, _jquery2.default)('#snowflake_maker #snowflake_holder div').css({ 'color': '#' + options.text_colour });
     (0, _jquery2.default)('#name_text').html("the snowflake of " + options.name).css({ 'color': '#' + options.text_colour });
 }
 });

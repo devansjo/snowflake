@@ -71,8 +71,7 @@ export default function buildSnowflake($target, options) {
     $('.poster_framed_1_text').css( { 'color' : '#' + options.text_colour });
 
     // Copy styles and content into the static snowflake builder page
-    $('#snowflake_background').css({ 'background-color' : '#' + options.background_colour });
-    $('#snowflake_background #snowflake_maker #snowflake_holder div').css({ 'color' : '#' + options.text_colour });
+    $('#snowflake_maker #snowflake_holder div').css({ 'color' : '#' + options.text_colour });
     $('#name_text').html("the snowflake of " + options.name).css({ 'color' : '#' + options.text_colour });
 
 }
