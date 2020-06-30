@@ -6,9 +6,13 @@ require('buffer').Buffer;
 document.addEventListener('DOMContentLoaded', () => {
   // do your setup here
   const query = queryString.parse(window.location.search);
-  // console.log(query.p);
-  // const params = JSON.parse(query.p.toString('utf8'));
- const params = {}
+  const params = query.name ? {name: query.name} : {};
   buildSnowflake($('#snowflake_holder'), params);
-  console.log('Initialized app');
+
+  const input = document.getElementById('enter-name');
+  input.addEventListener("keyup", () => {
+    console.log(input.value);
+    buildSnowflake($('#snowflake_holder'), {name: input.value});
+  });
+
 });

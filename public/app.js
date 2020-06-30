@@ -171,11 +171,14 @@ require('buffer').Buffer;
 document.addEventListener('DOMContentLoaded', function () {
   // do your setup here
   var query = _queryString2.default.parse(window.location.search);
-  // console.log(query.p);
-  // const params = JSON.parse(query.p.toString('utf8'));
-  var params = {};
+  var params = query.name ? { name: query.name } : {};
   (0, _snowflakeRenderer2.default)((0, _jquery2.default)('#snowflake_holder'), params);
-  console.log('Initialized app');
+
+  var input = document.getElementById('enter-name');
+  input.addEventListener("keyup", function () {
+    console.log(input.value);
+    (0, _snowflakeRenderer2.default)((0, _jquery2.default)('#snowflake_holder'), { name: input.value });
+  });
 });
 });
 
