@@ -13,7 +13,7 @@ body {
   font-style: normal;
   font-weight: 800;
   font-display: fallback;
-  src: local("Montserrat ExtraBold"), local("Montserrat-ExtraBold"), url("/fonts/montserrat-v13-latin-800.woff2") format("woff2"), url("/fonts/montserrat-v13-latin-800.woff") format("woff");
+  src: local("Montserrat ExtraBold"), local("Montserrat-ExtraBold"), url("fonts/montserrat-v13-latin-800.woff2") format("woff2"), url("fonts/montserrat-v13-latin-800.woff") format("woff");
   /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* montserrat-900 - latin */
@@ -22,7 +22,7 @@ body {
   font-style: normal;
   font-weight: 900;
   font-display: fallback;
-  src: local("Montserrat Black"), local("Montserrat-Black"), url("/fonts/montserrat-v13-latin-900.woff2") format("woff2"), url("/fonts/montserrat-v13-latin-900.woff") format("woff");
+  src: local("Montserrat Black"), local("Montserrat-Black"), url("fonts/montserrat-v13-latin-900.woff2") format("woff2"), url("fonts/montserrat-v13-latin-900.woff") format("woff");
   /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* open-sans-regular - latin */
@@ -31,7 +31,7 @@ body {
   font-style: normal;
   font-weight: 400;
   font-display: fallback;
-  src: local("Open Sans Regular"), local("OpenSans-Regular"), url("/fonts/open-sans-v16-latin-regular.woff2") format("woff2"), url("/fonts/open-sans-v16-latin-regular.woff") format("woff");
+  src: local("Open Sans Regular"), local("OpenSans-Regular"), url("fonts/open-sans-v16-latin-regular.woff2") format("woff2"), url("fonts/open-sans-v16-latin-regular.woff") format("woff");
   /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* open-sans-700 - latin */
@@ -40,7 +40,7 @@ body {
   font-style: normal;
   font-weight: 700;
   font-display: fallback;
-  src: local("Open Sans Bold"), local("OpenSans-Bold"), url("/fonts/open-sans-v16-latin-700.woff2") format("woff2"), url("/fonts/open-sans-v16-latin-700.woff") format("woff");
+  src: local("Open Sans Bold"), local("OpenSans-Bold"), url("fonts/open-sans-v16-latin-700.woff2") format("woff2"), url("fonts/open-sans-v16-latin-700.woff") format("woff");
   /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 .header {
