@@ -1,7 +1,8 @@
 html {
-    font-size: 16px;
-    background: #223c61 url(https://s3.amazonaws.com/tboe-static/snowflake2015/snowflake_share_bg.jpg);
+  font-size: 16px;
+  background: #223c61 url(https://s3.amazonaws.com/tboe-static/snowflake2015/snowflake_share_bg.jpg);
 }
+
 body {
   margin: 0;
 }
@@ -13,8 +14,10 @@ body {
   font-weight: 800;
   font-display: fallback;
   src: local('Montserrat ExtraBold'), local('Montserrat-ExtraBold'),
-       url('fonts/montserrat-v13-latin-800.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('fonts/montserrat-v13-latin-800.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('fonts/montserrat-v13-latin-800.woff2') format('woff2'),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('fonts/montserrat-v13-latin-800.woff') format('woff');
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 /* montserrat-900 - latin */
@@ -24,8 +27,10 @@ body {
   font-weight: 900;
   font-display: fallback;
   src: local('Montserrat Black'), local('Montserrat-Black'),
-       url('fonts/montserrat-v13-latin-900.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('fonts/montserrat-v13-latin-900.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('fonts/montserrat-v13-latin-900.woff2') format('woff2'),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('fonts/montserrat-v13-latin-900.woff') format('woff');
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 /* open-sans-regular - latin */
@@ -35,8 +40,10 @@ body {
   font-weight: 400;
   font-display: fallback;
   src: local('Open Sans Regular'), local('OpenSans-Regular'),
-       url('fonts/open-sans-v16-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('fonts/open-sans-v16-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('fonts/open-sans-v16-latin-regular.woff2') format('woff2'),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('fonts/open-sans-v16-latin-regular.woff') format('woff');
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 /* open-sans-700 - latin */
@@ -46,20 +53,24 @@ body {
   font-weight: 700;
   font-display: fallback;
   src: local('Open Sans Bold'), local('OpenSans-Bold'),
-       url('fonts/open-sans-v16-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('fonts/open-sans-v16-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('fonts/open-sans-v16-latin-700.woff2') format('woff2'),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('fonts/open-sans-v16-latin-700.woff') format('woff');
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 
 
 .header {
-    background: #fffdf0;
-    box-shadow: 0 1px 5px rgba(0,0,0,.05);
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 10;
-   .container {
+  background: #fffdf0;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, .05);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  padding: 10px 0;
+
+  .container {
     -ms-flex-align: center;
     -ms-flex-direction: row;
     -webkit-align-items: center;
@@ -77,16 +88,35 @@ body {
     max-width: 1280px;
     padding: 0 10px;
     width: 100%;
+    justify-content: space-between;
+
     .tboe-logo {
-        font-family: Montserrat,sans-serif;
-        font-size: 1.2rem;
-        font-weight: 800;
-        line-height: 45px;
-        text-decoration: none;
-        padding: 15px 0;
-        &:active, &:link, &:visited {
-            color: #000;
-        }
+      font-family: Montserrat, sans-serif;
+      font-size: 1.2rem;
+      font-weight: 800;
+      line-height: 45px;
+      text-decoration: none;
+      padding: 15px 0;
+
+      &:active,
+      &:link,
+      &:visited {
+        color: #000;
+      }
+
+      @media (max-width: 380px) {
+        display: none;
+      }
+    }
+
+    .config {
+      font-size: 1rem;
+      text-align: right;
+
+      @media (max-width: 380px) {
+        font-size: 0.8rem;
+        text-align: center;
+      }
     }
   }
 }
@@ -95,14 +125,15 @@ body {
 .snowflake {
   display: block;
   width: 450px;
-  padding: 100px;
+  padding: 100px 50px 50px 50px;
   margin: 0 auto;
 
-  @media (max-width: 480px){
+  @media (max-width: 480px) {
     zoom: 60%;
     margin: 100px auto 10px auto;
   }
-  @media (max-width: 380px){
+
+  @media (max-width: 380px) {
     zoom: 50%;
   }
 
@@ -115,73 +146,77 @@ body {
   }
 
   #snowflake_holder {
-      width:450px;
-      height:512px;
+    width: 450px;
+    height: 512px;
 
-      font-family:cursive;
-      margin: 0 auto;
-      position: relative;
+    margin: 0 auto;
+    position: relative;
 
-      font-family: 'Tangerine', cursive;
-      font-weight:700;
-      user-select: none;
+    // font-family: 'Tangerine', cursive;
+    // font-weight: 700;
+    user-select: none;
 
-      -ms-transform-origin: 50% 50%;
-      -webkit-transform-origin: 50% 50%;
-      transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
 
-      color:#fff !important;
-      opacity:1;
-      z-index:1;
+    color: #fff !important;
+    opacity: 1;
+    z-index: 1;
+
   }
 
   .arm {
-      height:80px;
-      width:256px;
-      position:absolute;
-      right:256px; /* half main width */
-      top:216px; /* half main width - half arm height */
-      vertical-align: middle;
+    height: 80px;
+    width: 256px;
+    position: absolute;
+    right: 256px;
+    /* half main width */
+    top: 216px;
+    /* half main width - half arm height */
+    vertical-align: middle;
   }
 
   .text_holder {
-      width:100%;
-      height:40px;
-      line-height: 40px;
-      font-size:40px;
-      font-weight: 100;
-      position:absolute;
-      left:0px;
-      top:0px;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    font-size: 40px;
+    font-weight: 100;
+    position: absolute;
+    left: 0px;
+    top: 0px;
   }
 
   .text_holder.bottom {
-      transform: scaleY(-1);
-      filter: FlipV;
-      -ms-filter: "FlipV";
-      top:40px;
+    transform: scaleY(-1);
+    filter: FlipV;
+    -ms-filter: "FlipV";
+    top: 40px;
   }
+
   .char {
-      float:left;
+    float: left;
   }
+
   .rotate_pin {
-      transform-origin: 100% 50%;
+    transform-origin: 100% 50%;
   }
 }
 
 .name {
-  margin: 0 auto;
+  margin: 50px auto;
   display: block;
   text-align: center;
   max-width: 550px;
-  padding: 100px;
   font-family: 'Open Sans';
   font-weight: 300;
   text-transform: lowercase;
   line-height: 2.5rem;
   font-size: 2.5rem;
   color: #fff !important;
-  @media (max-width: 480px){
+
+  @media (max-width: 480px) {
     line-height: 1.5rem;
     font-size: 1.5rem;
     padding: 50px;
@@ -189,15 +224,34 @@ body {
 }
 
 .form {
+  margin-top: 100px;
+
+  &.snowflake-form {
+    margin-top: 20px;
+  }
+
   .container {
     margin: 0 auto;
     text-align: center;
+
+    label {
+      color: white;
+      font-size: 1rem;
+      padding: 0.2rem;
+    }
+
     input {
       background: #fff;
       border-color: #000;
-      font-size: 2rem;
-      padding: 0.8rem;
-      @media (max-width: 480px){
+      font-size: 1rem;
+      padding: 0.2rem;
+
+      @media (max-width: 480px) {
+        font-size: 1.2rem;
+        padding: 0.5rem;
+      }
+
+      &.snowflake-input {
         font-size: 1.2rem;
         padding: 0.5rem;
       }
