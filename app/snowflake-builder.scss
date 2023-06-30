@@ -1,6 +1,10 @@
 html {
   font-size: 16px;
-  background: #223c61 url(https://s3.amazonaws.com/tboe-static/snowflake2015/snowflake_share_bg.jpg);
+  background: #223c61 url(images/snow_xmas_v01.png) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 body {
@@ -62,6 +66,7 @@ body {
 
 
 .header {
+  display: none;
   background: #fffdf0;
   box-shadow: 0 1px 5px rgba(0, 0, 0, .05);
   position: fixed;

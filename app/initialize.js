@@ -7,12 +7,12 @@ require('buffer').Buffer;
 
 const defaultOptions = {
   name: 'Your Name',
-  arms: 6,
-  max_font: 200,
+  arms: 7,
+  max_font: 125,
   min_font: 6,
   arm_length: 256,
-  font_family: 'cursive',
-  font_weight: 700
+  font_family: 'Pinyon Script',
+  font_weight: 450
 };
 
 const omitEmptyString = (object) =>

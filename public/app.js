@@ -1,1 +1,323 @@
-!function(){"use strict";var e="undefined"==typeof global?self:global;if("function"!=typeof e.require){var t={},r={},n={},o={}.hasOwnProperty,a=/^\.\.?(\/|$)/,l=function(e,t){for(var r,n=[],o=(a.test(t)?e+"/"+t:t).split("/"),l=0,f=o.length;l<f;l++)r=o[l],".."===r?n.pop():"."!==r&&""!==r&&n.push(r);return n.join("/")},f=function(e){return e.split("/").slice(0,-1).join("/")},i=function(t){return function(r){var n=l(f(t),r);return e.require(n,t)}},u=function(e,t){var n=p&&p.createHot(e),o={id:e,exports:{},hot:n};return r[e]=o,t(o.exports,i(e),o),o.exports},s=function(e){var t=n[e];return t&&e!==t?s(t):e},c=function(e,t){return s(l(f(e),t))},d=function(e,n){null==n&&(n="/");var a=s(e);if(o.call(r,a))return r[a].exports;if(o.call(t,a))return u(a,t[a]);throw new Error("Cannot find module '"+e+"' from '"+n+"'")};d.alias=function(e,t){n[t]=e};var m=/\.[^.\/]+$/,_=/\/index(\.[^\/]+)?$/,h=function(e){if(m.test(e)){var t=e.replace(m,"");o.call(n,t)&&n[t].replace(m,"")!==t+"/index"||(n[t]=e)}if(_.test(e)){var r=e.replace(_,"");o.call(n,r)||(n[r]=e)}};d.register=d.define=function(e,n){if(e&&"object"==typeof e)for(var a in e)o.call(e,a)&&d.register(a,e[a]);else t[e]=n,delete r[e],h(e)},d.list=function(){var e=[];for(var r in t)o.call(t,r)&&e.push(r);return e};var p=e._hmr&&new e._hmr(c,d,t,r);d._cache=r,d.hmr=p&&p.wrap,d.brunch=!0,e.require=d}}(),function(){var e;"undefined"==typeof window?this:window;require.register("initialize.js",function(e,t,r){"use strict";function n(e){return e&&e.__esModule?e:{"default":e}}var o=function(){function e(e,t){var r=[],n=!0,o=!1,a=void 0;try{for(var l,f=e[Symbol.iterator]();!(n=(l=f.next()).done)&&(r.push(l.value),!t||r.length!==t);n=!0);}catch(i){o=!0,a=i}finally{try{!n&&f["return"]&&f["return"]()}finally{if(o)throw a}}return r}return function(t,r){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,r);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),a=t("jquery"),l=n(a),f=t("lodash"),i=n(f),u=t("snowflake-renderer"),s=n(u),c=t("query-string"),d=n(c);t("buffer").Buffer;var m={name:"Your Name",arms:6,max_font:200,min_font:6,arm_length:256,font_family:"cursive",font_weight:700},_=function(e){return Object.fromEntries(Object.entries(e).filter(function(e){var t=o(e,2),r=t[1];return""!=r}))};document.addEventListener("DOMContentLoaded",function(){var e=_(d["default"].parse(window.location.search));i["default"].defaults(e,m);var t="https://fonts.googleapis.com/css?family="+e.font_family+":wght@100;200;300;400;500;600;700;800&display=swap";document.getElementById("config").innerText=JSON.stringify(i["default"].omit(e,"name")),l["default"].ajax({url:t,dataType:"text",statusCode:{200:function(){var r=document.createElement("link");r.rel="stylesheet",r.href=t,document.head.appendChild(r),document.getElementById("example").innerText=e.font_family}},error:function(e,t,r){console.log(e.status),console.log(r),document.getElementById("example").innerText="Invalid font name - Using cursive as default"}}),(0,s["default"])((0,l["default"])("#snowflake_holder"),e);var r=document.getElementById("enter-name");r.addEventListener("keyup",function(){i["default"].merge(e,{name:r.value}),(0,s["default"])((0,l["default"])("#snowflake_holder"),e)})})}),require.register("snowflake-renderer.js",function(e,t,r){"use strict";function n(e){return e&&e.__esModule?e:{"default":e}}function o(e,t){(0,l["default"])(".arm").remove(),(0,l["default"])("#snowflake_holder").css({"font-family":t.font_family,"font-weight":t.font_weight}),(0,l["default"])("#example").css({"font-family":t.font_family,"font-weight":t.font_weight});for(var r=t.name.length>0?t.name:"your name",n=[],o=0;o<r.length;o++){var a=r.substr(o,1),f=t.max_font-(t.max_font-t.min_font)/r.length*o;t.arm_length/r.length,t.arm_length/r.length*o;n.push({"char":a,font_size:f})}var i=n.map(function(e){return'<div class="char" style=" font-size: '+e.font_size+'px;">'+e["char"]+"</div>"}).join(""),u='\n    <div class="arm rotate_pin" id="arm_0">\n        <div class="text_holder top">"'+i+'</div>\n        <div class="text_holder bottom">"'+i+"</div>\n    </div>\n    ";e.append(u),(0,l["default"])("#snowflake").append(u);for(var s=1;s<t.arms;s++){var c=(0,l["default"])("#arm_0").clone();c.attr("id"," arm_"+s).rotate(360/t.arms*s),e.append(c),(0,l["default"])("#snowflake").append(c)}(0,l["default"])(".poster_framed_1_snowflake").html(e.clone().attr("class","snowflake_static_1").attr("id","").css({color:"#"+t.text_colour})),(0,l["default"])(".poster_framed_1_text").html("the snowflake of "+t.name),(0,l["default"])(".mockup, .card_front").css({"background-color":"#"+t.background_colour}),(0,l["default"])(".snowflake_static_1 div").css({color:"#"+t.text_colour}),(0,l["default"])(".poster_framed_1_text").css({color:"#"+t.text_colour}),(0,l["default"])("#snowflake_maker #snowflake_holder div").css({color:"#"+t.text_colour}),(0,l["default"])("#name_text").html("the snowflake of "+t.name).css({color:"#"+t.text_colour})}Object.defineProperty(e,"__esModule",{value:!0}),e["default"]=o;var a=t("jquery"),l=n(a);l["default"].fn.rotate=function(e){return(0,l["default"])(this).css({"-webkit-transform":"rotate("+e+"deg)","-moz-transform":"rotate("+e+"deg)","-ms-transform":"rotate("+e+"deg)",transform:"rotate("+e+"deg)"}),(0,l["default"])(this)}}),require.alias("process/browser.js","process"),e=require("process"),require.register("___globals___",function(e,t,r){})}(),require("___globals___");
+(function() {
+  'use strict';
+
+  var globals = typeof global === 'undefined' ? self : global;
+  if (typeof globals.require === 'function') return;
+
+  var modules = {};
+  var cache = {};
+  var aliases = {};
+  var has = {}.hasOwnProperty;
+
+  var expRe = /^\.\.?(\/|$)/;
+  var expand = function(root, name) {
+    var results = [], part;
+    var parts = (expRe.test(name) ? root + '/' + name : name).split('/');
+    for (var i = 0, length = parts.length; i < length; i++) {
+      part = parts[i];
+      if (part === '..') {
+        results.pop();
+      } else if (part !== '.' && part !== '') {
+        results.push(part);
+      }
+    }
+    return results.join('/');
+  };
+
+  var dirname = function(path) {
+    return path.split('/').slice(0, -1).join('/');
+  };
+
+  var localRequire = function(path) {
+    return function expanded(name) {
+      var absolute = expand(dirname(path), name);
+      return globals.require(absolute, path);
+    };
+  };
+
+  var initModule = function(name, definition) {
+    var hot = hmr && hmr.createHot(name);
+    var module = {id: name, exports: {}, hot: hot};
+    cache[name] = module;
+    definition(module.exports, localRequire(name), module);
+    return module.exports;
+  };
+
+  var expandAlias = function(name) {
+    var val = aliases[name];
+    return (val && name !== val) ? expandAlias(val) : name;
+  };
+
+  var _resolve = function(name, dep) {
+    return expandAlias(expand(dirname(name), dep));
+  };
+
+  var require = function(name, loaderPath) {
+    if (loaderPath == null) loaderPath = '/';
+    var path = expandAlias(name);
+
+    if (has.call(cache, path)) return cache[path].exports;
+    if (has.call(modules, path)) return initModule(path, modules[path]);
+
+    throw new Error("Cannot find module '" + name + "' from '" + loaderPath + "'");
+  };
+
+  require.alias = function(from, to) {
+    aliases[to] = from;
+  };
+
+  var extRe = /\.[^.\/]+$/;
+  var indexRe = /\/index(\.[^\/]+)?$/;
+  var addExtensions = function(bundle) {
+    if (extRe.test(bundle)) {
+      var alias = bundle.replace(extRe, '');
+      if (!has.call(aliases, alias) || aliases[alias].replace(extRe, '') === alias + '/index') {
+        aliases[alias] = bundle;
+      }
+    }
+
+    if (indexRe.test(bundle)) {
+      var iAlias = bundle.replace(indexRe, '');
+      if (!has.call(aliases, iAlias)) {
+        aliases[iAlias] = bundle;
+      }
+    }
+  };
+
+  require.register = require.define = function(bundle, fn) {
+    if (bundle && typeof bundle === 'object') {
+      for (var key in bundle) {
+        if (has.call(bundle, key)) {
+          require.register(key, bundle[key]);
+        }
+      }
+    } else {
+      modules[bundle] = fn;
+      delete cache[bundle];
+      addExtensions(bundle);
+    }
+  };
+
+  require.list = function() {
+    var list = [];
+    for (var item in modules) {
+      if (has.call(modules, item)) {
+        list.push(item);
+      }
+    }
+    return list;
+  };
+
+  var hmr = globals._hmr && new globals._hmr(_resolve, require, modules, cache);
+  require._cache = cache;
+  require.hmr = hmr && hmr.wrap;
+  require.brunch = true;
+  globals.require = require;
+})();
+
+(function() {
+var global = typeof window === 'undefined' ? this : window;
+var process;
+var __makeRelativeRequire = function(require, mappings, pref) {
+  var none = {};
+  var tryReq = function(name, pref) {
+    var val;
+    try {
+      val = require(pref + '/node_modules/' + name);
+      return val;
+    } catch (e) {
+      if (e.toString().indexOf('Cannot find module') === -1) {
+        throw e;
+      }
+
+      if (pref.indexOf('node_modules') !== -1) {
+        var s = pref.split('/');
+        var i = s.lastIndexOf('node_modules');
+        var newPref = s.slice(0, i).join('/');
+        return tryReq(name, newPref);
+      }
+    }
+    return none;
+  };
+  return function(name) {
+    if (name in mappings) name = mappings[name];
+    if (!name) return;
+    if (name[0] !== '.' && pref) {
+      var val = tryReq(name, pref);
+      if (val !== none) return val;
+    }
+    return require(name);
+  }
+};
+require.register("initialize.js", function(exports, require, module) {
+'use strict';
+
+var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
+
+var _jquery = require('jquery');
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+var _lodash = require('lodash');
+
+var _lodash2 = _interopRequireDefault(_lodash);
+
+var _snowflakeRenderer = require('snowflake-renderer');
+
+var _snowflakeRenderer2 = _interopRequireDefault(_snowflakeRenderer);
+
+var _queryString = require('query-string');
+
+var _queryString2 = _interopRequireDefault(_queryString);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+require('buffer').Buffer;
+
+var defaultOptions = {
+  name: 'Your Name',
+  arms: 7,
+  max_font: 125,
+  min_font: 6,
+  arm_length: 256,
+  font_family: 'Pinyon Script',
+  font_weight: 450
+};
+
+var omitEmptyString = function omitEmptyString(object) {
+  return Object.fromEntries(Object.entries(object).filter(function (_ref) {
+    var _ref2 = _slicedToArray(_ref, 2),
+        value = _ref2[1];
+
+    return value != "";
+  }));
+};
+
+document.addEventListener('DOMContentLoaded', function () {
+  var params = omitEmptyString(_queryString2.default.parse(window.location.search));
+
+  _lodash2.default.defaults(params, defaultOptions);
+
+  var url = 'https://fonts.googleapis.com/css?family=' + params.font_family + ':wght@100;200;300;400;500;600;700;800&display=swap';
+
+  document.getElementById('config').innerText = JSON.stringify(_lodash2.default.omit(params, 'name'));
+
+  _jquery2.default.ajax({
+    url: url,
+    dataType: 'text',
+    statusCode: {
+      200: function _() {
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = url;
+        document.head.appendChild(link);
+        document.getElementById('example').innerText = params.font_family;
+      }
+    },
+    error: function error(xhr, ajaxOptions, thrownError) {
+      console.log(xhr.status);
+      console.log(thrownError);
+      document.getElementById('example').innerText = "Invalid font name - Using cursive as default";
+    }
+  });
+
+  (0, _snowflakeRenderer2.default)((0, _jquery2.default)('#snowflake_holder'), params);
+
+  var input = document.getElementById('enter-name');
+  input.addEventListener("keyup", function () {
+    _lodash2.default.merge(params, { name: input.value });
+    (0, _snowflakeRenderer2.default)((0, _jquery2.default)('#snowflake_holder'), params);
+  });
+});
+});
+
+require.register("snowflake-renderer.js", function(exports, require, module) {
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = buildSnowflake;
+
+var _jquery = require('jquery');
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+_jquery2.default.fn.rotate = function (degrees) {
+    (0, _jquery2.default)(this).css({
+        '-webkit-transform': 'rotate(' + degrees + 'deg)',
+        '-moz-transform': 'rotate(' + degrees + 'deg)',
+        '-ms-transform': 'rotate(' + degrees + 'deg)',
+        'transform': 'rotate(' + degrees + 'deg)'
+    });
+    return (0, _jquery2.default)(this);
+};
+
+function buildSnowflake($target, options) {
+
+    (0, _jquery2.default)('.arm').remove();
+
+    (0, _jquery2.default)('#snowflake_holder').css({
+        'font-family': options.font_family,
+        'font-weight': options.font_weight
+
+    });
+    (0, _jquery2.default)('#example').css({
+        'font-family': options.font_family,
+        'font-weight': options.font_weight
+    });
+    var name_text = options.name.length > 0 ? options.name : "your name";
+    var chars = [];
+
+    for (var t = 0; t < name_text.length; t++) {
+        var char = name_text.substr(t, 1);
+
+        // step between the max and min font sizes
+        var font_size = options.max_font - (options.max_font - options.min_font) / name_text.length * t;
+
+        // space the fonts over the 'branch'
+        var font_width = options.arm_length / name_text.length;
+
+        // distance on 'branch'
+        var font_left = options.arm_length / name_text.length * t;
+
+        chars.push({ char: char, font_size: font_size });
+    }
+
+    var arm = chars.map(function (char) {
+        return '<div class="char" style=" font-size: ' + char.font_size + 'px;">' + char.char + '</div>';
+    }).join('');
+
+    var primary_arm = '\n    <div class="arm rotate_pin" id="arm_0">\n        <div class="text_holder top">"' + arm + '</div>\n        <div class="text_holder bottom">"' + arm + '</div>\n    </div>\n    ';
+
+    $target.append(primary_arm);
+    (0, _jquery2.default)('#snowflake').append(primary_arm);
+
+    // already made arm 0, just clone it into the remaining arms
+    for (var i = 1; i < options.arms; i++) {
+        var new_arm = (0, _jquery2.default)('#arm_0').clone();
+        new_arm.attr('id', ' arm_' + i).rotate(360 / options.arms * i);
+        $target.append(new_arm);
+        (0, _jquery2.default)('#snowflake').append(new_arm);
+    }
+
+    (0, _jquery2.default)('.poster_framed_1_snowflake').html($target.clone().attr("class", "snowflake_static_1").attr("id", "").css({ 'color': '#' + options.text_colour }));
+    (0, _jquery2.default)('.poster_framed_1_text').html("the snowflake of " + options.name);
+    (0, _jquery2.default)('.mockup, .card_front').css({ 'background-color': '#' + options.background_colour });
+    (0, _jquery2.default)('.snowflake_static_1 div').css({ 'color': '#' + options.text_colour });
+    (0, _jquery2.default)('.poster_framed_1_text').css({ 'color': '#' + options.text_colour });
+
+    // Copy styles and content into the static snowflake builder page
+    (0, _jquery2.default)('#snowflake_maker #snowflake_holder div').css({ 'color': '#' + options.text_colour });
+    (0, _jquery2.default)('#name_text').html("the snowflake of " + options.name).css({ 'color': '#' + options.text_colour });
+}
+});
+
+;require.alias("process/browser.js", "process");process = require('process');require.register("___globals___", function(exports, require, module) {
+  
+});})();require('___globals___');
+
+
+//# sourceMappingURL=app.js.map
