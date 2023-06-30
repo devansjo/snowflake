@@ -1,14 +1,15 @@
 
-# DEPLOYING TO NETLIFY
+
+## Deploying to Netlify
 
 IMPORTANT: The latest version of the snowflake is inside the `gh-pages` branch. Any commits to that branch are automatically deployed to Netlify. The master branch is not currently up to date.
 
-# Preview URL
+## Preview URL
 
 You can see the latest version [https://super-tartufo-61502f.netlify.app/index.html](https://super-tartufo-61502f.netlify.app/index.html)
 
 
-# Setup for local development
+## Setup for local development
 
 
 * Install (if you don't have them):
