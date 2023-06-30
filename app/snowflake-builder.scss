@@ -214,12 +214,12 @@ body {
   display: block;
   text-align: center;
   max-width: 550px;
-  font-family: 'Open Sans';
-  font-weight: 300;
+  font-family: 'Spectral', serif;
+  font-weight: 400;
   text-transform: lowercase;
-  line-height: 2.5rem;
-  font-size: 2.5rem;
-  color: #fff !important;
+  line-height: 2rem;
+  font-size: 2rem;
+  color: #fefefe !important;
 
   @media (max-width: 480px) {
     line-height: 1.5rem;
