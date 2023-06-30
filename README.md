@@ -1,12 +1,15 @@
-# Brunch + Babel/ES6
 
-This is a modern JS skeleton for [Brunch](http://brunch.io).
+# DEPLOYING TO NETLIFY
 
-## Installation
+IMPORTANT: The latest version of the snowflake is inside the `gh-pages` branch. Any commits to that branch are automatically deployed to Netlify. The master branch is not currently up to date.
 
-Clone this repo manually or use `brunch new dir -s es6`
+# Preview URL
 
-## Getting started
+You can see the latest version [https://super-tartufo-61502f.netlify.app/index.html](https://super-tartufo-61502f.netlify.app/index.html)
+
+
+# Setup for local development
+
 
 * Install (if you don't have them):
     * [Node.js](http://nodejs.org): `brew install node` on OS X
@@ -19,12 +22,3 @@ Clone this repo manually or use `brunch new dir -s es6`
     * `public/` dir is fully auto-generated and served by HTTP server.  Write your code in `app/` dir.
     * Place static files you want to be copied from `app/assets/` to `public/`.
     * [Brunch site](http://brunch.io), [Getting started guide](https://github.com/brunch/brunch-guide#readme)
-
-## ES-next
-
-To use proposed JS features not included into ES6, do this:
-
-* `npm install --save-dev babel-preset-stage-0`
-* in `brunch-config.js`, add the preset: `presets: ['latest', 'stage-0']`
-
-
